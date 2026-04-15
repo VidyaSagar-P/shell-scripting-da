@@ -5,7 +5,7 @@ FRUITS=("APPLE" "MANGO" "GUAVA")
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-P="\e[34m"
+P="\e[35m"
 N="\e[0m"
 
 echo -e "$P Printing the fruit names with their colours $N"
