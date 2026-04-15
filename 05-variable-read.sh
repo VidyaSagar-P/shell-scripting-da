@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# these variable are used in runtime execution
 echo "Please enter your name "
 read USERNAME
 # echo "Entered name is:: ${USERNAME}"

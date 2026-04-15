@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# we can use these variables as arguments to pass in command line
 PERSON1=$1
 PERSON2=$2
 
