@@ -9,8 +9,8 @@ N="\e[0m"
 
 echo "Printing the fruit names with their colours"
 
-echo -e "$R First fruit is:: ${FRUITS[0]} $N"
-echo -e "$YSecond fruit is:: ${FRUITS[1]} $N"
-echo -e "$GThird fruit is:: ${FRUITS[2]} $N"
+echo -e "First fruit is::$R ${FRUITS[0]} $N"
+echo -e "Second fruit is::$Y ${FRUITS[1]} $N"
+echo -e "Third fruit is::$G ${FRUITS[2]} $N"
 
 echo "All fruits are:: ${FRUITS[@]}"
