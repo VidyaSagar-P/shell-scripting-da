@@ -10,7 +10,7 @@ USERID=$(id -u)
 CHECK_ROOT(){
     if [ $? -ne 0 ]
     then
-        echo "Please proceed with the root privileges.."
+        echo -e "$Y Please proceed with the root privileges..$N"
         exit 1
     fi
 }
@@ -21,7 +21,7 @@ VALIDATE(){
         echo -e "$2.. is $R failed $N"
         exit 1
     else
-        echo -e "$2.. is $R success $N"
+        echo -e "$2.. is $G success $N"
 
 }
 
@@ -32,10 +32,10 @@ do
     dnf list installed $package
     if [ $? -ne 0 ]
     then
-        echo "$package is not installed, Going to install it.."
+        echo -e "$package is not $Y installed, Going to install it.. $N"
         dnf install $package -y
         VALIDATE $? "Installing $package"
     else 
-        echo "$package is already installed..nothing to do"
+        echo -e "$G $package is already installed..nothing to do $N"
     fi
 done
