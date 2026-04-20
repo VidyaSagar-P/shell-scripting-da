@@ -1,5 +1,10 @@
 #!/bin/bash
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 LOG_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -12,13 +17,13 @@ USERID=$(id -u)
 CHECK_ROOT(){
     if [ $? -ne 0 ]
     then
-        echo "Please proceed with the root privileges.."  | tee -a $LOG_FILE
+        echo -e "Please proceed with the root privileges.."  | tee -a $LOG_FILE
         exit 1
     fi
 }
 
 USAGE(){
-    echo "USAGE:: sudo sh 16-redirectors.sh package1 package2.."  
+    echo -e "USAGE:: sudo sh 16-redirectors.sh package1 package2.."  
     exit 1
 }
 
@@ -26,16 +31,16 @@ USAGE(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2.. is failed" | tee -a $LOG_FILE
+        echo -e "$2.. is $R failed $N" | tee -a $LOG_FILE
         exit 1
     else
-        echo "$2.. is success" | tee -a $LOG_FILE
+        echo -e "$2.. is success $N" | tee -a $LOG_FILE
     fi
 }
 
 
 
-echo "Script started executing at: $(date)" | tee -a $LOG_FILE
+echo -e "$G Script started executing at: $(date) $N" | tee -a $LOG_FILE
 
 CHECK_ROOT 
 
@@ -49,10 +54,10 @@ do
     dnf list installed $package
     if [ $? -ne 0 ]
     then 
-        echo "$package is not installed..Going to install it.." | tee -a $LOG_FILE
+        echo -e "$Y $package is not installed..Going to install it..$N" | tee -a $LOG_FILE
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? "Insatalling $package"
     else
-        echo "$package is already imstalled nothing to do.." | tee -a $LOG_FILE
+        echo -e "$G $package is already imstalled nothing to do..$N" | tee -a $LOG_FILE
     fi
 done
