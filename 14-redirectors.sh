@@ -51,13 +51,13 @@ fi
 
 for package in $@
 do
-    dnf list installed $package
+    dnf list installed $package &>> $LOG_FILE
     if [ $? -ne 0 ]
     then 
         echo -e "$Y $package is not installed..Going to install it..$N" | tee -a $LOG_FILE
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? "Insatalling $package"
     else
-        echo -e "$G $package is already imstalled nothing to do..$N" | tee -a $LOG_FILE
+        echo -e "$G$package is already Installed nothing to do..$N" | tee -a $LOG_FILE
     fi
 done
