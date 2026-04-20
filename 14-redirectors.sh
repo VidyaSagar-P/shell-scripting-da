@@ -17,13 +17,13 @@ USERID=$(id -u)
 CHECK_ROOT(){
     if [ $? -ne 0 ]
     then
-        echo -e "Please proceed with the root privileges.."  | tee -a $LOG_FILE
+        echo -e "$Y Please proceed with the root privileges..$N"  | tee -a $LOG_FILE
         exit 1
     fi
 }
 
 USAGE(){
-    echo -e "USAGE:: sudo sh 16-redirectors.sh package1 package2.."  
+    echo -e "$R USAGE:: sudo sh 16-redirectors.sh package1 package2..$N"  
     exit 1
 }
 
@@ -34,13 +34,13 @@ VALIDATE(){
         echo -e "$2.. is $R failed $N" | tee -a $LOG_FILE
         exit 1
     else
-        echo -e "$2.. is success $N" | tee -a $LOG_FILE
+        echo -e "$2.. is $G success $N" | tee -a $LOG_FILE
     fi
 }
 
 
 
-echo -e "$G Script started executing at: $(date) $N" | tee -a $LOG_FILE
+echo -e "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 CHECK_ROOT 
 
