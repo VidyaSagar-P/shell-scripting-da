@@ -18,10 +18,10 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-        echo "$2.. is failed"
+        echo -e "$2.. is $R failed $N"
         exit 1
     else
-        echo "$2.. is success"
+        echo -e "$2.. is $R success $N"
 
 }
 
