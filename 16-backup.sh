@@ -45,7 +45,7 @@ then
 
     if [ -f "$ZIP_FILES" ]
     then
-        echo "Successfully zipped the files older thane $DAYS days"
+        echo "Successfully zipped the files older thane $DAYS-days"
         #remove the files after zipping
         while IFS= read -r file
         do
@@ -57,5 +57,5 @@ then
         exit 1
     fi
 else
-    echo "files are not found older than $DAYS days"
+    echo "files are not found older than $DAYS-days"
 fi
