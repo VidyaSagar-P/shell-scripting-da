@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SRC_DIR="/home/ec2-user/logs"
+SRC_DIR="/home/ec2-user/logs/"
 
 if [ -d $SRC_DIR ]
 then
