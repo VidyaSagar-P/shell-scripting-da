@@ -11,7 +11,7 @@ USAGE(){
     exit 1
 }
 
-if [ @# -lt 2 ]
+if [ $# -lt 2 ]
 then
     USAGE
 fi
@@ -42,7 +42,7 @@ then
     echo "files are found..Going zip the files"
     ZIP_FILES="$DST_DIR/app-logs-$TIMESTAMP.zip"
     find "$SRC_DIR" -name "*.log" -mtime +$DAYS | zip "$ZIP_FILES" -@
-    
+
     if [ -f "$ZIP_FILES" ]
     then
         echo "Successfully zipped the files older thane $DAYS days"
