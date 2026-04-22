@@ -9,6 +9,6 @@ do
     PARTITION=$(echo "$line" | grep xfs | awk -F " " '{print $NF}')
     if [ $USAGE -gt $DISK_THRESHOLD ]
     then
-        echo "$PARTITION is more than $DISk_THRESHOLD, Current value is::$USAGE"
+        echo "$PARTITION is more than $DISK_THRESHOLD, Current value is::$USAGE"
     fi
 done <<< $DISK_USAGE
