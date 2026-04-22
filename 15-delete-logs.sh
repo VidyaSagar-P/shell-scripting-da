@@ -16,4 +16,4 @@ while IFS= read -r line
 do
     echo "deleting file:: $line"
     rm -rf $line
-done <<< $SRC_DIR
+done <<< $FILES
